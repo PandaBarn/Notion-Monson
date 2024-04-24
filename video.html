@@ -12,11 +12,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center; /* Center content horizontally */
         }
         .video-container {
+            margin: auto; /* Center the container horizontally */
             position: relative;
             width: 100%;
+            max-width: 1000px; /* Limit maximum width */
             padding-top: 56.25%; /* 16:9 aspect ratio (height: width) */
         }
         .video-container iframe {
@@ -30,7 +31,7 @@
 </head>
 <body>
     <div class="video-container">
-        <iframe width="1000" height="800" src="https://www.youtube.com/embed/3spKKxWYH48" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/3spKKxWYH48" frameborder="0" allowfullscreen></iframe>
     </div>
 </body>
 </html>
