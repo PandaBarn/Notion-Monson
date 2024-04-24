@@ -24,6 +24,7 @@
       max-width: 100%;
       height: auto;
     }
+    .zoomed { transform: scale(2); }
   </style>
 </head>
 <body>
@@ -103,28 +104,23 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
     <script>
-      // Initialize the gallery
       baguetteBox.run('.tz-gallery', {});
 
-      // Function to zoom images
-      function zoomImage(event, imgSrc) {
-        if (event.clientX - event.target.getBoundingClientRect().left > event.target.clientWidth / 3 &&
-            event.clientX - event.target.getBoundingClientRect().left < 2 * event.target.clientWidth / 3) {
-          var zoomWindow = window.open("", "_blank");
-          zoomWindow.document.write('<img src="' + imgSrc + '" style="width: 100%;">');
-        }
-      }
-
       window.onload = function () {
-        document.querySelector('.tz-gallery .lightbox').click(); // Open the first image automatically
-
-        // Add zoom functionality
-        document.querySelectorAll('.tz-gallery .lightbox').forEach(function(item) {
-          item.onclick = function (event) {
-            zoomImage(event, this.href);
-            event.preventDefault();
-          };
+        document.querySelectorAll('.baguetteBox-button').forEach(button => {
+          button.addEventListener('click', function(event) {
+            const image = document.querySelector('.baguetteBox-overlay .full-image');
+            const isZoomed = image.classList.contains('zoomed');
+            if (!isZoomed) {
+              image.classList.add('zoomed');
+            } else {
+              image.classList.remove('zoomed');
+            }
+            event.stopPropagation();
+          });
         });
+
+        document.querySelector('.tz-gallery .lightbox').click(); // Open the first image automatically
       };
     </script>
   </section>
