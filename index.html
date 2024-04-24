@@ -18,13 +18,13 @@
     .tz-gallery .thumbnail:hover {
       transform: translateY(-10px) scale(1.02);
     }
-    .baguetteBox-button { background-color: transparent !important; }
     .carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
       display: block;
       max-width: 100%;
       height: auto;
     }
-    .zoomed { transform: scale(2); }
+    .zoomed { transform: scale(2); cursor: zoom-out; }
+    .full-image:not(.zoomed) { cursor: zoom-in; }
   </style>
 </head>
 <body>
@@ -102,25 +102,28 @@
         </div>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguetteBox.js/1.8.1/baguetteBox.min.js"></script>
     <script>
       baguetteBox.run('.tz-gallery', {});
 
-      window.onload = function () {
-        document.querySelectorAll('.baguetteBox-button').forEach(button => {
-          button.addEventListener('click', function(event) {
-            const image = document.querySelector('.baguetteBox-overlay .full-image');
-            const isZoomed = image.classList.contains('zoomed');
-            if (!isZoomed) {
-              image.classList.add('zoomed');
-            } else {
-              image.classList.remove('zoomed');
-            }
-            event.stopPropagation();
-          });
-        });
+      // Add zoom functionality inside the lightbox
+      document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('full-image')) {
+          const isZoomed = event.target.classList.contains('zoomed');
+          if (isZoomed) {
+            event.target.classList.remove('zoomed');
+          } else {
+ event.target.classList.add('zoomed'); // Apply zoom
+          } else {
+            event.target.classList.add('zoomed'); // Apply zoom
+          }
+          event.preventDefault(); // Prevent default action to avoid closing the lightbox on click
+        }
+      });
 
-        document.querySelector('.tz-gallery .lightbox').click(); // Open the first image automatically
+      // Automatically open the first image
+      window.onload = function () {
+        document.querySelector('.tz-gallery .lightbox').click();
       };
     </script>
   </section>
