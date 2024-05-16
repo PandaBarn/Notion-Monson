@@ -1,4 +1,4 @@
-Apologies for the confusion. Here's the updated code without the "Copy Code" texts and with the carousels aligned in two rows, displaying four carousels per row:
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +15,15 @@ Apologies for the confusion. Here's the updated code without the "Copy Code" tex
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  margin: 50px;
+  margin: 50px auto;
+  max-width: 1200px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
 }
 
 .carousel-container {
@@ -114,43 +122,47 @@ h1 {
 <body>
   <h1>Photo Carousels</h1>
   <div class="container">
-    <div class="carousel-container">
-      <h2>Scrubber 1 Inlet</h2>
-      <img src="Scrubber 1 Inlet/Inlet (1).jpeg" alt="Scrubber 1 Inlet" onclick="openCarousel('carousel-inlet', 0)">
-    </div>
-<div class="carousel-container">
-  <h2>Scrubber 1 Liquid Outlet</h2>
-  <img src="Scrubber 1 Liquid Outlet/Liq Outlet (1).jpeg" alt="Scrubber 1 Liquid Outlet" onclick="openCarousel('carousel-liquid-outlet', 0)">
+    <div class="row">
+      <div class="carousel-container">
+        <h2>Scrubber 1 Inlet</h2>
+        <img src="Scrubber 1 Inlet/Inlet (1).jpeg" alt="Scrubber 1 Inlet" onclick="openCarousel('carousel-inlet', 0)">
+      </div>
+      <div class="carousel-container">
+    <h2>Scrubber 1 Liquid Outlet</h2>
+    <img src="Scrubber 1 Liquid Outlet/Liq Outlet (1).jpeg" alt="Scrubber 1 Liquid Outlet" onclick="openCarousel('carousel-liquid-outlet', 0)">
+  </div>
+
+  <div class="carousel-container">
+    <h2>Scrubber 1 Mis</h2>
+    <img src="Scrubber 1 Mis/Mis (1).jpeg" alt="Scrubber 1 Mis" onclick="openCarousel('carousel-mis', 0)">
+  </div>
+
+  <div class="carousel-container">
+    <h2>Scrubber 1 Outlet to Flare</h2>
+    <img src="Scrubber 1 Outlet to Flare/Outlet to flare (1).jpeg" alt="Scrubber 1 Outlet to Flare" onclick="openCarousel('carousel-outlet-flare', 0)">
+  </div>
 </div>
 
-<div class="carousel-container">
-  <h2>Scrubber 1 Mis</h2>
-  <img src="Scrubber 1 Mis/Mis (1).jpeg" alt="Scrubber 1 Mis" onclick="openCarousel('carousel-mis', 0)">
-</div>
+<div class="row">
+  <div class="carousel-container">
+    <h2>Scrubber 1 PSV</h2>
+    <img src="Scrubber 1 PSV/PSV (1).jpeg" alt="Scrubber 1 PSV" onclick="openCarousel('carousel-psv', 0)">
+  </div>
 
-<div class="carousel-container">
-  <h2>Scrubber 1 Outlet to Flare</h2>
-  <img src="Scrubber 1 Outlet to Flare/Outlet to flare (1).jpeg" alt="Scrubber 1 Outlet to Flare" onclick="openCarousel('carousel-outlet-flare', 0)">
-</div>
+  <div class="carousel-container">
+    <h2>Scrubber 1 Sales 1</h2>
+    <img src="Scrubber 1 Sales 1/Sales 1 (1).jpeg" alt="Scrubber 1 Sales 1" onclick="openCarousel('carousel-sales1', 0)">
+  </div>
 
-<div class="carousel-container">
-  <h2>Scrubber 1 PSV</h2>
-  <img src="Scrubber 1 PSV/PSV (1).jpeg" alt="Scrubber 1 PSV" onclick="openCarousel('carousel-psv', 0)">
-</div>
+  <div class="carousel-container">
+    <h2>Scrubber 1 Sales 2</h2>
+    <img src="Scrubber 1 Sales 2/Sales 2 (1).jpeg" alt="Scrubber 1 Sales 2" onclick="openCarousel('carousel-sales2', 0)">
+  </div>
 
-<div class="carousel-container">
-  <h2>Scrubber 1 Sales 1</h2>
-  <img src="Scrubber 1 Sales 1/Sales 1 (1).jpeg" alt="Scrubber 1 Sales 1" onclick="openCarousel('carousel-sales1', 0)">
-</div>
-
-<div class="carousel-container">
-  <h2>Scrubber 1 Sales 2</h2>
-  <img src="Scrubber 1 Sales 2/Sales 2 (1).jpeg" alt="Scrubber 1 Sales 2" onclick="openCarousel('carousel-sales2', 0)">
-</div>
-
-<div class="carousel-container">
-  <h2>Scrubber 1 Tags</h2>
-  <img src="Scrubber 1 Tags/Tags (1).jpeg" alt="Scrubber 1 Tags" onclick="openCarousel('carousel-tags', 0)">
+  <div class="carousel-container">
+    <h2>Scrubber 1 Tags</h2>
+    <img src="Scrubber 1 Tags/Tags (1).jpeg" alt="Scrubber 1 Tags" onclick="openCarousel('carousel-tags', 0)">
+  </div>
 </div>
   </div>
   <!-- Carousels -->
