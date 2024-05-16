@@ -1,38 +1,164 @@
-</style>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photo Carousels</title>
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #212529;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+Copy code.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px;
+}
+
+.carousel-container {
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.carousel-container:hover {
+  transform: translateY(-5px);
+}
+
+.carousel-container img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.carousel-container h2 {
+  font-size: 20px;
+  margin: 15px 0;
+  color: #343a40;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 30px 0;
+}
+
+.carousel {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 999;
+}
+
+.carousel img {
+  max-width: 80%;
+  max-height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.carousel .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.carousel .close:hover {
+  color: #ff4d4d;
+}
+
+.carousel .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.carousel .arrow:hover {
+  color: #80b3ff;
+}
+
+.carousel .arrow.left {
+  left: 20px;
+}
+
+.carousel .arrow.right {
+  right: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  color: #343a40;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+  </style>
 </head>
 <body>
   <h1>Photo Carousels</h1>
-  <div class="carousel-container">
-    <h2>Scrubber 1 Inlet</h2>
-    <img src="Scrubber 1 Inlet/Inlet (1).jpeg" alt="Scrubber 1 Inlet" onclick="openCarousel('carousel-inlet', 0)">
+  <div class="container">
+    <div class="carousel-container">
+      <h2>Scrubber 1 Inlet</h2>
+      <img src="Scrubber 1 Inlet/Inlet (1).jpeg" alt="Scrubber 1 Inlet" onclick="openCarousel('carousel-inlet', 0)">
+    </div>
+Copy code<div class="carousel-container">
+  <h2>Scrubber 1 Liquid Outlet</h2>
+  <img src="Scrubber 1 Liquid Outlet/Liq Outlet (1).jpeg" alt="Scrubber 1 Liquid Outlet" onclick="openCarousel('carousel-liquid-outlet', 0)">
+</div>
+
+<div class="carousel-container">
+  <h2>Scrubber 1 Mis</h2>
+  <img src="Scrubber 1 Mis/Mis (1).jpeg" alt="Scrubber 1 Mis" onclick="openCarousel('carousel-mis', 0)">
+</div>
+
+<div class="carousel-container">
+  <h2>Scrubber 1 Outlet to Flare</h2>
+  <img src="Scrubber 1 Outlet to Flare/Outlet to flare (1).jpeg" alt="Scrubber 1 Outlet to Flare" onclick="openCarousel('carousel-outlet-flare', 0)">
+</div>
   </div>
-  <div class="carousel-container">
-    <h2>Scrubber 1 Liquid Outlet</h2>
-    <img src="Scrubber 1 Liquid Outlet/Liq Outlet (1).jpeg" alt="Scrubber 1 Liquid Outlet" onclick="openCarousel('carousel-liquid-outlet', 0)">
-  </div>
-  <div class="carousel-container">
-    <h2>Scrubber 1 Mis</h2>
-    <img src="Scrubber 1 Mis/Mis (1).jpeg" alt="Scrubber 1 Mis" onclick="openCarousel('carousel-mis', 0)">
-  </div>
-  <div class="carousel-container">
-    <h2>Scrubber 1 Outlet to Flare</h2>
-    <img src="Scrubber 1 Outlet to Flare/Outlet to flare (1).jpeg" alt="Scrubber 1 Outlet to Flare" onclick="openCarousel('carousel-outlet-flare', 0)">
-  </div>
-  <div class="carousel-container">
-    <h2>Scrubber 1 PSV</h2>
-    <img src="Scrubber 1 PSV/PSV (1).jpeg" alt="Scrubber 1 PSV" onclick="openCarousel('carousel-psv', 0)">
-  </div>
-  <div class="carousel-container">
-    <h2>Scrubber 1 Sales 1</h2>
-    <img src="Scrubber 1 Sales 1/Sales 1 (1).jpeg" alt="Scrubber 1 Sales 1" onclick="openCarousel('carousel-sales1', 0)">
-  </div>
-  <div class="carousel-container">
-    <h2>Scrubber 1 Sales 2</h2>
-    <img src="Scrubber 1 Sales 2/Sales 2 (1).jpeg" alt="Scrubber 1 Sales 2" onclick="openCarousel('carousel-sales2', 0)">
-  </div>
-  <div class="carousel-container">
-    <h2>Scrubber 1 Tags</h2>
-    <img src="Scrubber 1 Tags/Tags (1).jpeg" alt="Scrubber 1 Tags" onclick="openCarousel('carousel-tags', 0)">
+  <div class="divider"></div>
+  <div class="container">
+    <div class="carousel-container">
+      <h2>Scrubber 1 PSV</h2>
+      <img src="Scrubber 1 PSV/PSV (1).jpeg" alt="Scrubber 1 PSV" onclick="openCarousel('carousel-psv', 0)">
+    </div>
+Copy code<div class="carousel-container">
+  <h2>Scrubber 1 Sales 1</h2>
+  <img src="Scrubber 1 Sales 1/Sales 1 (1).jpeg" alt="Scrubber 1 Sales 1" onclick="openCarousel('carousel-sales1', 0)">
+</div>
+
+<div class="carousel-container">
+  <h2>Scrubber 1 Sales 2</h2>
+  <img src="Scrubber 1 Sales 2/Sales 2 (1).jpeg" alt="Scrubber 1 Sales 2" onclick="openCarousel('carousel-sales2', 0)">
+</div>
+
+<div class="carousel-container">
+  <h2>Scrubber 1 Tags</h2>
+  <img src="Scrubber 1 Tags/Tags (1).jpeg" alt="Scrubber 1 Tags" onclick="openCarousel('carousel-tags', 0)">
+</div>
   </div>
   <!-- Carousels -->
   <div id="carousel-inlet" class="carousel">
