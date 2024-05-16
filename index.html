@@ -1,3 +1,4 @@
+Apologies for the confusion. Here's the updated code without the "Copy Code" texts and with the carousels aligned in two rows, displaying four carousels per row:
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,7 @@
       font-family: Arial, sans-serif;
       text-align: center;
     }
-Copy code.container {
+.container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -18,7 +19,7 @@ Copy code.container {
 }
 
 .carousel-container {
-  width: 300px;
+  width: calc(25% - 30px);
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
@@ -41,13 +42,6 @@ Copy code.container {
   font-size: 20px;
   margin: 15px 0;
   color: #343a40;
-}
-
-.divider {
-  width: 100%;
-  height: 1px;
-  background-color: #ccc;
-  margin: 30px 0;
 }
 
 .carousel {
@@ -138,13 +132,12 @@ h1 {
   <h2>Scrubber 1 Outlet to Flare</h2>
   <img src="Scrubber 1 Outlet to Flare/Outlet to flare (1).jpeg" alt="Scrubber 1 Outlet to Flare" onclick="openCarousel('carousel-outlet-flare', 0)">
 </div>
-  </div>
-  <div class="divider"></div>
-  <div class="container">
-    <div class="carousel-container">
-      <h2>Scrubber 1 PSV</h2>
-      <img src="Scrubber 1 PSV/PSV (1).jpeg" alt="Scrubber 1 PSV" onclick="openCarousel('carousel-psv', 0)">
-    </div>
+
+<div class="carousel-container">
+  <h2>Scrubber 1 PSV</h2>
+  <img src="Scrubber 1 PSV/PSV (1).jpeg" alt="Scrubber 1 PSV" onclick="openCarousel('carousel-psv', 0)">
+</div>
+
 <div class="carousel-container">
   <h2>Scrubber 1 Sales 1</h2>
   <img src="Scrubber 1 Sales 1/Sales 1 (1).jpeg" alt="Scrubber 1 Sales 1" onclick="openCarousel('carousel-sales1', 0)">
